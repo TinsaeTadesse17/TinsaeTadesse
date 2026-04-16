@@ -1,0 +1,39 @@
+/* ═══════════════════════════════════════════
+   ANIMATIONS.CSS — Minimal keyframes
+   ═══════════════════════════════════════════ */
+
+/* Staggered reveals for project cards */
+.project.reveal:nth-child(1){ transition-delay:0s; }
+.project.reveal:nth-child(2){ transition-delay:.06s; }
+.project.reveal:nth-child(3){ transition-delay:.12s; }
+.project.reveal:nth-child(4){ transition-delay:.18s; }
+.project.reveal:nth-child(5){ transition-delay:.24s; }
+.project.reveal:nth-child(6){ transition-delay:.3s; }
+
+.exp.reveal:nth-child(1){ transition-delay:0s; }
+.exp.reveal:nth-child(2){ transition-delay:.05s; }
+.exp.reveal:nth-child(3){ transition-delay:.1s; }
+.exp.reveal:nth-child(4){ transition-delay:.15s; }
+.exp.reveal:nth-child(5){ transition-delay:.2s; }
+.exp.reveal:nth-child(6){ transition-delay:.25s; }
+
+.vibe:nth-child(1){ transition-delay:0s; }
+.vibe:nth-child(2){ transition-delay:.04s; }
+.vibe:nth-child(3){ transition-delay:.08s; }
+.vibe:nth-child(4){ transition-delay:.12s; }
+.vibe:nth-child(5){ transition-delay:.16s; }
+.vibe:nth-child(6){ transition-delay:.2s; }
+
+/* Lore items */
+.lore-overlay.open .lore__block:nth-child(1){ animation: loreIn .5s ease .1s both; }
+.lore-overlay.open .lore__block:nth-child(2){ animation: loreIn .5s ease .15s both; }
+.lore-overlay.open .lore__block:nth-child(3){ animation: loreIn .5s ease .2s both; }
+.lore-overlay.open .lore__block:nth-child(4){ animation: loreIn .5s ease .25s both; }
+.lore-overlay.open .lore__block:nth-child(5){ animation: loreIn .5s ease .3s both; }
+.lore-overlay.open .lore__block:nth-child(6){ animation: loreIn .5s ease .35s both; }
+.lore-overlay.open .lore__block:nth-child(7){ animation: loreIn .5s ease .4s both; }
+
+@keyframes loreIn {
+    from { opacity:0; transform:translateY(14px); }
+    to { opacity:1; transform:translateY(0); }
+}

@@ -1,0 +1,138 @@
+/* ═══════════════════════════════════════════
+   LANDING.CSS — The Choice Screen
+   One accent color, avatar peekaboo, bouncy
+   ═══════════════════════════════════════════ */
+
+.landing {
+    position:fixed; inset:0; z-index:10001;
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden;
+    transition: opacity .8s ease, transform .8s ease;
+}
+.landing.exit { opacity:0; transform:scale(1.08); pointer-events:none; }
+.landing.gone { display:none; }
+
+.landing__bg {
+    position:absolute; inset:0;
+    background: #0c0c0f;
+}
+
+.landing__noise {
+    position:absolute; inset:0; opacity:.12;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    mix-blend-mode:overlay; pointer-events:none;
+}
+
+.landing__center {
+    position:relative; z-index:2; text-align:center; padding:32px;
+    max-width:560px;
+}
+
+/* ── Avatar Peekaboo ── */
+.landing__avatar-peek {
+    width:120px; height:120px; margin:0 auto 20px;
+    border-radius:50%; overflow:hidden;
+    border:3px solid rgba(255,255,255,.1);
+    animation: avatarBounce 3s ease-in-out infinite, avatarGlow 4s ease-in-out infinite;
+}
+
+.landing__avatar-img {
+    width:100%; height:100%; object-fit:cover;
+}
+
+@keyframes avatarBounce {
+    0%, 100% { transform:translateY(0) scale(1); }
+    30% { transform:translateY(-12px) scale(1.03); }
+    50% { transform:translateY(-6px) scale(1.01); }
+    70% { transform:translateY(-10px) scale(1.02); }
+}
+
+@keyframes avatarGlow {
+    0%, 100% { box-shadow: 0 0 0 rgba(255,255,255,.05); }
+    50% { box-shadow: 0 0 30px rgba(255,255,255,.08), 0 8px 32px rgba(0,0,0,.3); }
+}
+
+/* ── Text ── */
+.landing__hi {
+    font-family:'Syne',sans-serif;
+    font-size:1.6rem; font-weight:700; color:#fff; margin-bottom:6px;
+    letter-spacing:.02em;
+    animation: fadeUp .6s ease both;
+}
+
+.landing__tea-joke {
+    font-family:'Caveat',cursive;
+    font-size:1rem; color:rgba(255,255,255,.35);
+    margin-bottom:28px;
+    animation: fadeUp .6s ease .1s both;
+}
+
+.landing__question {
+    font-family:'Syne',sans-serif;
+    font-size:clamp(1.6rem,4.5vw,3rem); font-weight:800;
+    color:#fff; line-height:1.1; margin-bottom:40px;
+    animation: fadeUp .7s ease .2s both;
+}
+
+/* ── Choices ── */
+.landing__choices {
+    display:flex; align-items:center; gap:16px; justify-content:center; flex-wrap:wrap;
+    animation: fadeUp .7s ease .35s both;
+}
+
+.landing__or {
+    font-size:.78rem; color:#444; font-family:'Caveat',cursive; font-size:1rem;
+}
+
+.landing__btn {
+    display:flex; align-items:center; gap:14px;
+    padding:18px 28px; border-radius:14px; text-align:left;
+    min-width:200px; position:relative; overflow:hidden;
+    transition: all .35s cubic-bezier(.25,1,.5,1);
+}
+
+.landing__btn-icon { font-size:1.4rem; }
+.landing__btn-label { font-size:1.05rem; font-weight:700; }
+.landing__btn-sub { font-size:.65rem; opacity:.4; letter-spacing:.06em; display:block; }
+
+/* SINGLE consistent accent for both buttons — white/light */
+.landing__btn--aesthetic {
+    background: rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.1);
+    color:#fff;
+}
+.landing__btn--aesthetic:hover {
+    background: rgba(255,255,255,.08);
+    border-color:rgba(255,255,255,.25);
+    transform:translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(255,255,255,.04);
+}
+
+.landing__btn--minimalist {
+    background: rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.1);
+    color:#fff;
+}
+.landing__btn--minimalist:hover {
+    background: rgba(255,255,255,.08);
+    border-color:rgba(255,255,255,.25);
+    transform:translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(255,255,255,.04);
+}
+
+.landing__hint {
+    margin-top:28px; font-size:.7rem; color:#333; letter-spacing:.06em;
+    font-family:'Caveat',cursive; font-size:.95rem;
+    animation: fadeUp .7s ease .5s both;
+}
+
+@keyframes fadeUp {
+    from { opacity:0; transform:translateY(18px); }
+    to { opacity:1; transform:translateY(0); }
+}
+
+@media(max-width:600px){
+    .landing__choices { flex-direction:column; }
+    .landing__btn { min-width:auto; width:100%; }
+    .landing__avatar-peek { width:90px; height:90px; }
+}

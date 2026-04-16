@@ -1,0 +1,171 @@
+/* ═══════════════════════════════════════════
+   AESTHETIC.CSS — Warm, vibrant, expressive
+   Inspired by anjicodes.co & jackiezhang.co.za
+   ═══════════════════════════════════════════ */
+
+body.aesthetic {
+    background:#0e0e12;
+    color:#e8e4df;
+    font-family:'Space Grotesk',sans-serif;
+}
+
+body.aesthetic .grain-overlay { opacity:.03; }
+
+/* ── Scrollbar ── */
+body.aesthetic::-webkit-scrollbar { width:6px; }
+body.aesthetic::-webkit-scrollbar-track { background:#0e0e12; }
+body.aesthetic::-webkit-scrollbar-thumb { background:#FF6B6B; border-radius:10px; }
+
+/* ── Nav ── */
+body.aesthetic .nav { background:transparent; }
+body.aesthetic .nav.scrolled::before { background:rgba(14,14,18,.85); border-bottom:1px solid rgba(255,107,107,.08); }
+body.aesthetic .nav__name { color:#FF6B6B; font-family:'Caveat',cursive; font-size:1.4rem; }
+body.aesthetic .nav__link { color:#888; }
+body.aesthetic .nav__link:hover { color:#FF6B6B; }
+body.aesthetic .nav__link::after { background:#FF6B6B; }
+body.aesthetic .nav__switch { color:#FF6B6B; border-color:rgba(255,107,107,.2); }
+body.aesthetic .nav__switch:hover { background:rgba(255,107,107,.1); }
+
+/* ── Hero ── */
+body.aesthetic .hero {
+    background: radial-gradient(ellipse at 20% 50%, rgba(185,131,255,.06) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(185,131,255,.04) 0%, transparent 50%),
+                #0e0e12;
+}
+
+body.aesthetic .hero__eyebrow {
+    color:#B983FF; font-family:'Caveat',cursive; font-size:1.1rem;
+    letter-spacing:.05em; text-transform:none;
+}
+
+body.aesthetic .hero__name {
+    font-family:'Syne',sans-serif; color:#fff; font-weight:800;
+}
+
+body.aesthetic .hero__name-accent {
+    background: linear-gradient(135deg, #9b51e0, #B983FF);
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    background-clip:text;
+    animation: accentPulse 3s ease-in-out infinite;
+}
+
+@keyframes accentPulse {
+    0%, 100% { filter:brightness(1); }
+    50% { filter:brightness(1.2); }
+}
+
+body.aesthetic .hero__coffee-note { color:#B983FF; opacity:.7; }
+
+body.aesthetic .hero__bio { color:#999; }
+body.aesthetic .hero__bio strong { color:#B983FF; }
+body.aesthetic .hero__bio em { color:#B983FF; }
+
+body.aesthetic .pill {
+    background:rgba(185,131,255,.1); color:#B983FF; border:1px solid rgba(185,131,255,.2);
+}
+body.aesthetic .pill:nth-child(2) { background:rgba(185,131,255,.1); color:#B983FF; border-color:rgba(185,131,255,.2); }
+body.aesthetic .pill:nth-child(3) { background:rgba(185,131,255,.1); color:#B983FF; border-color:rgba(185,131,255,.2); }
+body.aesthetic .pill:nth-child(4) { background:rgba(185,131,255,.1); color:#B983FF; border-color:rgba(185,131,255,.2); }
+
+body.aesthetic .btn-primary {
+    background:linear-gradient(135deg,#9b51e0,#B983FF);
+    color:#0e0e12; border-radius:12px;
+    box-shadow:0 4px 20px rgba(185,131,255,.25);
+}
+body.aesthetic .btn-primary:hover { box-shadow:0 8px 30px rgba(185,131,255,.35); transform:translateY(-3px); }
+
+body.aesthetic .btn-ghost {
+    background:transparent; color:#e8e4df;
+    border:1.5px solid rgba(255,255,255,.15); border-radius:12px;
+}
+body.aesthetic .btn-ghost:hover { border-color:#B983FF; color:#B983FF; }
+
+body.aesthetic .avatar-outline { color:#B983FF; }
+body.aesthetic .avatar-outline::before { border-color:#B983FF; opacity:.25; }
+
+body.aesthetic .hero__avatar {
+    filter: drop-shadow(0 12px 30px rgba(185,131,255,.12)) drop-shadow(0 4px 12px rgba(0,0,0,.3));
+}
+
+body.aesthetic .nextjs-planet {
+    background-color: #e2e2e2;
+}
+
+body.aesthetic .hero__scroll { color:#555; }
+body.aesthetic .hero__scroll-bar { background:rgba(185,131,255,.15); }
+body.aesthetic .hero__scroll-bar::after { background:#B983FF; }
+
+/* ── Marquee ── */
+body.aesthetic .marquee { border-color:rgba(255,107,107,.1); color:rgba(255,107,107,.3); }
+
+/* ── Sections ── */
+body.aesthetic .section-num { color:#FF6B6B; opacity:1; }
+body.aesthetic .section-title {
+    font-family:'Syne',sans-serif; color:#fff;
+}
+
+/* ── Projects ── */
+body.aesthetic .project { border-color:rgba(255,255,255,.06); }
+body.aesthetic .project:hover { background:rgba(255,107,107,.02); }
+body.aesthetic .project__name { color:#fff; font-family:'Syne',sans-serif; }
+body.aesthetic .project__at { color:#FF6B6B; font-family:'Caveat',cursive; font-size:.95rem; opacity:1; }
+body.aesthetic .project__stack span {
+    background:rgba(255,255,255,.05); color:#aaa; border:1px solid rgba(255,255,255,.08);
+}
+body.aesthetic .project__link { color:#FF6B6B; }
+body.aesthetic .project__link:hover { color:#B983FF; }
+body.aesthetic .project__num { color:#FF6B6B; opacity:1; }
+
+/* ── Experience ── */
+body.aesthetic .exp { border-color:rgba(255,255,255,.06); }
+body.aesthetic .exp:hover { background:rgba(255,107,107,.02); }
+body.aesthetic .exp__period { color:#FF6B6B; opacity:1; font-family:'Caveat',cursive; font-size:.95rem; }
+body.aesthetic .exp__info h3 { color:#e8e4df; }
+body.aesthetic .exp__co { color:#B983FF; }
+
+/* ── About ── */
+body.aesthetic .about__text p { color:#999; }
+body.aesthetic .about__text strong { color:#FF6B6B; }
+
+body.aesthetic .vibe {
+    background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.06);
+}
+body.aesthetic .vibe:hover { border-color:rgba(255,107,107,.3); background:rgba(255,107,107,.04); }
+
+body.aesthetic .about__education { border-color:rgba(255,255,255,.06); }
+body.aesthetic .about__education h3 { color:#FF6B6B; font-family:'Syne',sans-serif; }
+body.aesthetic .edu { border-color:rgba(255,255,255,.05); }
+body.aesthetic .edu__school { color:#e8e4df; }
+
+/* ── Stack ── */
+body.aesthetic .stack-col h4 { color:#FF6B6B; font-family:'Caveat',cursive; font-size:1.05rem; }
+body.aesthetic .stack-col li { color:#888; }
+
+/* ── Contact ── */
+body.aesthetic .contact__title {
+    font-family:'Syne',sans-serif; color:#fff;
+    background:linear-gradient(135deg,#fff 50%,#FF6B6B);
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+body.aesthetic .contact__sub { color:#888; }
+body.aesthetic .contact__link {
+    background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); color:#e8e4df;
+}
+body.aesthetic .contact__link:hover {
+    border-color:#FF6B6B; color:#FF6B6B; background:rgba(255,107,107,.04);
+}
+
+/* ── Footer ── */
+body.aesthetic .footer { color:#555; border-top:1px solid rgba(255,255,255,.04); }
+
+/* ── Lore ── */
+body.aesthetic .lore-card {
+    background:#18181f; border:1px solid rgba(255,107,107,.1);
+    box-shadow:0 30px 80px rgba(0,0,0,.5);
+}
+body.aesthetic .lore__h { color:#FF6B6B; font-family:'Syne',sans-serif; }
+body.aesthetic .lore__block h3 { color:#B983FF; }
+body.aesthetic .lore__block p { color:#999; }
+body.aesthetic .lore__block li { color:#888; border-color:rgba(255,255,255,.05); }
+body.aesthetic .lore__x { color:#FF6B6B; border-color:rgba(255,107,107,.2); }
+body.aesthetic .lore__p--footer { color:#555; border-color:rgba(255,107,107,.1); }

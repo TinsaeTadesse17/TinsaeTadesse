@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ti — AI Engineer & Researcher</title>
+    <meta name="description" content="Ti (Tinsae Tadesse) — AI Engineer, Researcher, Builder. MIT SGI Alumni. Based in Addis Ababa.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=Caveat:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="css/aesthetic.css">
+    <link rel="stylesheet" href="css/minimalist.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- LANDING: THE CHOICE                     -->
+    <!-- ═══════════════════════════════════════ -->
+    <div id="landing" class="landing">
+        <!-- Ripped edge added seamlessly to the left margin -->
+        <svg id="landing-rip" style="position: absolute; left: -80px; top: -10vh; width: 80px; height: 120vh; overflow: visible; display: none; z-index: 1;" preserveAspectRatio="none" viewBox="0 0 80 100">
+            <!-- Under-layer shadow ripple -->
+            <path d="M80,0 L40,4 L60,11 L20,19 L70,26 L30,34 L50,42 L10,48 L55,56 L25,62 L60,70 L35,76 L75,82 L25,89 L65,96 L30,100 L80,100 Z" fill="rgba(0,0,0,0.05)"/>
+            <!-- Secondary wrinkling edge layer -->
+            <path d="M80,0 L35,5 L65,13 L25,20 L65,28 L35,35 L45,43 L15,49 L45,57 L30,64 L55,71 L40,78 L80,83 L30,90 L70,97 L35,100 L80,100 Z" fill="#efebe1" filter="drop-shadow(-5px 0px 5px rgba(0,0,0,0.1))"/>
+            <!-- Primary sharp ripped front edge -->
+            <path d="M80,0 L30,5 L50,12 L10,18 L60,25 L20,32 L40,38 L0,45 L45,52 L15,58 L50,65 L25,72 L65,78 L15,85 L55,92 L20,100 L80,100 Z" fill="#fdfbf7" filter="drop-shadow(-8px 0px 10px rgba(0,0,0,0.2))"/>
+        </svg>
+
+        <div class="landing__bg"></div>
+        <div class="landing__noise"></div>
+
+        <style>
+            .landing {
+                background-color: #fdfbf7 !important;
+                background-image: 
+                    linear-gradient(90deg, transparent 60px, rgba(230,80,80,0.5) 60px, rgba(230,80,80,0.5) 62px, transparent 62px),
+                    linear-gradient(rgba(150, 180, 220, 0.5) 1px, transparent 1px) !important;
+                background-size: 100% 100%, 100% 40px !important;
+                background-position: 0 0, 0 35px !important;
+                color: #222 !important;
+            }
+            .landing__noise { display: none !important; }
+            .landing__bg { display: none !important; }
+            
+            .wimpy-text {
+                font-family: 'Caveat', cursive;
+                color: #1a1a1a;
+                line-height: 1.2;
+                transform: rotate(-2deg);
+            }
+            .wimpy-heading {
+                font-size: clamp(3rem, 7vw, 4.5rem);
+                margin-left: 20px;
+                margin-bottom: 40px;
+                font-weight: 700;
+            }
+            .wimpy-sub {
+                font-size: clamp(1.8rem, 4vw, 2.5rem);
+                margin-bottom: 40px;
+                margin-left: 30px;
+            }
+            .wimpy-btn {
+                background: transparent;
+                border: 2px solid #222;
+                border-radius: 4px;
+                font-family: 'Caveat', cursive;
+                font-size: 1.8rem;
+                color: #222;
+                padding: 10px 25px;
+                cursor: pointer;
+                transition: transform 0.2s;
+                background: #fff;
+                box-shadow: 3px 3px 0 rgba(0,0,0,0.8);
+            }
+            .wimpy-btn:hover {
+                transform: scale(1.05) rotate(1deg);
+            }
+            .wimpy-or {
+                font-family: 'Caveat', cursive;
+                font-size: 2rem;
+                margin: 0 20px;
+                opacity: 0.6;
+            }
+            .landing.peeling {
+                animation: peelAway 2.2s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+                pointer-events: none;
+            }
+            @keyframes peelAway {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(110vw); }
+            }
+        </style>
+        
+        <div class="landing__center" style="text-align: left; max-width: 800px; padding-left: 80px;">
+            <h1 class="wimpy-text wimpy-heading">welcome! i'm tinsae tadesse.</h1>
+            
+            <div class="landing__choices" style="justify-content: flex-start; align-items: center; gap: 10px; margin-left: 20px; margin-top: 40px;">
+                <button class="landing__btn wimpy-btn" id="choose-start">
+                    <span>let's get to know each other →</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- PORTFOLIO                               -->
+    <!-- ═══════════════════════════════════════ -->
+    <div id="portfolio" class="portfolio" style="display:none;">
+
+        <!-- Grain -->
+        <div class="grain-overlay"></div>
+
+        <!-- Nav -->
+        <nav class="nav" id="nav">
+            <button class="nav__name" id="nav-name">ti.</button>
+            <div class="nav__right">
+                <a href="#work" class="nav__link">work</a>
+                <a href="#about" class="nav__link">about</a>
+                <a href="#contact" class="nav__link">contact</a>
+                <button class="nav__switch" id="mode-switch" title="Switch vibe">⚡</button>
+            </div>
+        </nav>
+
+        <!-- ═══ HERO ═══ -->
+        <section id="hero" class="hero">
+            <div class="hero__inner">
+                <div class="hero__left">
+                    <div class="hero__eyebrow reveal">AI Engineer & Researcher</div>
+                    <h1 class="hero__name reveal" id="hero-name">
+                        <div id="hello-text-wrapper" style="font-size: 0.45em; font-weight: 500; height: 1.2em; line-height: 1.2em; padding-bottom: 0.2em; letter-spacing: 0.05em; opacity: 0.85;">
+                            <span id="hello-text">Hello,</span>
+                        </div>
+                        I'm <span class="hero__name-accent">Ti</span>
+                    </h1>
+                    <p class="hero__coffee-note reveal">my name sounds like tea, but i'm a coffee girl through and through ☕</p>
+                    <p class="hero__bio reveal">I build AI systems that solve real problems: from market simulations, to drought prediction, to 3D reconstruction. Contributed to research projects as a fellow researcher at MIT. Currently architecting at <strong>DeeperPoint</strong>.</p>
+                    <div class="hero__pills reveal">
+                        <span class="pill">MIT SGI Alumni</span>
+                        <span class="pill">AI Engineer</span>
+                        <span class="pill">A2SV Alumni</span>
+                    </div>
+                    <div class="hero__actions reveal">
+                        <a href="#work" class="btn-primary">see my work</a>
+                        <a href="#contact" class="btn-ghost">let's talk</a>
+                    </div>
+                </div>
+                <div class="hero__right reveal">
+                    <div class="hero__avatar-scene">
+                        <!-- Tech Orbit -->
+                        <div class="tech-orbit">
+                            <div class="orbit-ring">
+                                <div class="planet-pos" style="--angle: 0deg;"><div class="planet-counter"><div class="planet"><img src="assets/icons/python.svg" alt="Python"></div></div></div>
+                                <div class="planet-pos" style="--angle: 36deg;"><div class="planet-counter"><div class="planet"><img src="assets/icons/pytorch.svg" alt="PyTorch"></div></div></div>
+                                <div class="planet-pos" style="--angle: 72deg;"><div class="planet-counter"><div class="planet emoji-planet">🌍</div></div></div>
+                                <div class="planet-pos" style="--angle: 108deg;"><div class="planet-counter"><div class="planet"><img src="assets/icons/react.svg" alt="React"></div></div></div>
+                                <div class="planet-pos" style="--angle: 144deg;"><div class="planet-counter"><div class="planet"><img src="assets/icons/tensorflow.svg" alt="TensorFlow"></div></div></div>
+                                <div class="planet-pos" style="--angle: 180deg;"><div class="planet-counter"><div class="planet nextjs-planet"><img src="assets/icons/nextjs.svg" alt="Next.js"></div></div></div>
+                                <div class="planet-pos" style="--angle: 216deg;"><div class="planet-counter"><div class="planet emoji-planet">🌕</div></div></div>
+                                <div class="planet-pos" style="--angle: 252deg;"><div class="planet-counter"><div class="planet"><img src="assets/icons/fastapi.svg" alt="FastAPI"></div></div></div>
+                                <div class="planet-pos" style="--angle: 288deg;"><div class="planet-counter"><div class="planet"><img src="assets/icons/flutter.svg" alt="Flutter"></div></div></div>
+                                <div class="planet-pos" style="--angle: 324deg;"><div class="planet-counter"><div class="planet emoji-planet">🪐</div></div></div>
+                            </div>
+                        </div>
+                        <!-- Avatar with dashed outline -->
+                        <div class="avatar-outline">
+                            <img src="assets/images/avatar.png" alt="Ti" class="hero__avatar">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__scroll">
+                <span>scroll</span>
+                <div class="hero__scroll-bar"></div>
+            </div>
+        </section>
+
+        <!-- ═══ MARQUEE ═══ -->
+        <div class="marquee">
+            <div class="marquee__track">
+                <span>PYTHON</span><span>·</span>
+                <span>PYTORCH</span><span>·</span>
+                <span>REACT</span><span>·</span>
+                <span>NEXT.JS</span><span>·</span>
+                <span>TENSORFLOW</span><span>·</span>
+                <span>COMPUTER VISION</span><span>·</span>
+                <span>LLMs</span><span>·</span>
+                <span>FAST API</span><span>·</span>
+                <span>FLUTTER</span><span>·</span>
+                <span>GAUSSIAN SPLATTING</span><span>·</span>
+                <span>PYTHON</span><span>·</span>
+                <span>PYTORCH</span><span>·</span>
+                <span>REACT</span><span>·</span>
+                <span>NEXT.JS</span><span>·</span>
+                <span>TENSORFLOW</span><span>·</span>
+                <span>COMPUTER VISION</span><span>·</span>
+                <span>LLMs</span><span>·</span>
+                <span>FAST API</span><span>·</span>
+                <span>FLUTTER</span><span>·</span>
+                <span>GAUSSIAN SPLATTING</span><span>·</span>
+            </div>
+        </div>
+
+        <!-- ═══ WORK / PROJECTS ═══ -->
+        <section id="work" class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-num">01</span>
+                    <h2 class="section-title">Selected Work</h2>
+                </div>
+
+                <div class="projects">
+                    <article class="project reveal" id="proj-1">
+                        <div class="project__num">01</div>
+                        <div class="project__content">
+                            <h3 class="project__name">Cosolvent AI Platform</h3>
+                            <p class="project__at">DeeperPoint — Fullstack/AI Engineer & Architect</p>
+                            <p class="project__desc">A modular AI hosting framework with Agentic RAG pipelines, LLM orchestration, vectorization, and market services. Built ClientSynth for synthetic data generation and GPSim for grain market simulation. Automating thin markets end-to-end.</p>
+                            <div class="project__stack">
+                                <span>Python</span><span>FastAPI</span><span>RAG</span><span>LLMs</span><span>Vector DB</span>
+                            </div>
+                        </div>
+                        <div class="project__emoji">🧠</div>
+                    </article>
+
+                    <article class="project reveal" id="proj-2">
+                        <div class="project__num">02</div>
+                        <div class="project__content">
+                            <h3 class="project__name">MIT SGI Research</h3>
+                            <p class="project__at">MIT · Intel Labs · ISTA · U. Plymouth</p>
+                            <p class="project__desc">Four research projects: 4D Gaussian Splatting texture transfer, hybrid mesh simplification with PyTorch3D, 3D stability optimization for printing, and topological analysis of truss structures. Computational geometry meets deep learning.</p>
+                            <div class="project__stack">
+                                <span>PyTorch</span><span>PyTorch3D</span><span>Gaussian Splatting</span><span>QEM</span>
+                            </div>
+                            <a href="https://github.com/TinsaeTadesse17/Gaussian-splatting" target="_blank" class="project__link">view on github →</a>
+                        </div>
+                        <div class="project__emoji">🔬</div>
+                    </article>
+
+                    <article class="project reveal" id="proj-3">
+                        <div class="project__num">03</div>
+                        <div class="project__content">
+                            <h3 class="project__name">Eset Coffee ERP</h3>
+                            <p class="project__at">Eset Coffee Export Co.</p>
+                            <p class="project__desc">Full-scale multi-module ERP and supply chain platform. Digitized the entire coffee batch lifecycle — intake, quality control, processing, storage, financial reporting. Role-based real-time dashboard replacing manual workflows.</p>
+                            <div class="project__stack">
+                                <span>Full-Stack</span><span>ERP</span><span>Supply Chain</span><span>React</span><span>Node.js</span>
+                            </div>
+                        </div>
+                        <div class="project__emoji">☕</div>
+                    </article>
+
+                    <article class="project reveal" id="proj-4">
+                        <div class="project__num">04</div>
+                        <div class="project__content">
+                            <h3 class="project__name">TransitTrack</h3>
+                            <p class="project__at">Team Lead & Full-Stack AI Engineer</p>
+                            <p class="project__desc">AI-powered real-time vehicle tracking with LSTM demand prediction. 25% route efficiency improvement, 15% reduced wait times, 10% fuel cost savings through genetic algorithm routing.</p>
+                            <div class="project__stack">
+                                <span>Flutter</span><span>FastAPI</span><span>TensorFlow</span><span>LSTM</span><span>MongoDB</span>
+                            </div>
+                            <a href="https://github.com/Transit-Track" target="_blank" class="project__link">view on github →</a>
+                        </div>
+                        <div class="project__emoji">🚌</div>
+                    </article>
+
+                    <article class="project reveal" id="proj-5">
+                        <div class="project__num">05</div>
+                        <div class="project__content">
+                            <h3 class="project__name">3D Reconstruction Research</h3>
+                            <p class="project__at">Computer Vision and Graphics Research Initiative</p>
+                            <p class="project__desc">500% more efficient approach to 3D reconstruction of symmetrical objects vs. the Dopplegangers paper. Graph algorithms + epipolar geometry for faulty match detection.</p>
+                            <div class="project__stack">
+                                <span>Python</span><span>Graph Algorithms</span><span>Epipolar Geometry</span>
+                            </div>
+                            <a href="https://github.com/TinsaeTadesse17/Computer-Vision-and-Graphics" target="_blank" class="project__link">view on github →</a>
+                        </div>
+                        <div class="project__emoji">🌐</div>
+                    </article>
+
+                    <article class="project reveal" id="proj-6">
+                        <div class="project__num">06</div>
+                        <div class="project__content">
+                            <h3 class="project__name">Drought Prediction AI</h3>
+                            <p class="project__at">Oxford Policy Management</p>
+                            <p class="project__desc">Deep learning model predicting drought in Ethiopia to reduce drought-driven poverty. Contributing to early warning systems and data-driven policy.</p>
+                            <div class="project__stack">
+                                <span>Deep Learning</span><span>Python</span><span>Climate Data</span>
+                            </div>
+                            <a href="https://github.com/TinsaeTadesse17/Drought-Prediction-Dashboard" target="_blank" class="project__link">view on github →</a>
+                        </div>
+                        <div class="project__emoji">🌧️</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ EXPERIENCE ═══ -->
+        <section id="experience" class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-num">02</span>
+                    <h2 class="section-title">Experience</h2>
+                </div>
+                <div class="exp-grid">
+                    <div class="exp reveal">
+                        <div class="exp__period">2025 — Now</div>
+                        <div class="exp__info">
+                            <h3>Fullstack/AI Engineer & Architect</h3>
+                            <p class="exp__co">DeeperPoint</p>
+                        </div>
+                    </div>
+                    <div class="exp reveal">
+                        <div class="exp__period">2025</div>
+                        <div class="exp__info">
+                            <h3>Fellow Researcher</h3>
+                            <p class="exp__co">MIT SGI'25</p>
+                        </div>
+                    </div>
+                    <div class="exp reveal">
+                        <div class="exp__period">2025 — Now</div>
+                        <div class="exp__info">
+                            <h3>Junior Researcher & AI Expert</h3>
+                            <p class="exp__co">Oxford Policy Management</p>
+                        </div>
+                    </div>
+                    <div class="exp reveal">
+                        <div class="exp__period">2025</div>
+                        <div class="exp__info">
+                            <h3>AI Engineer</h3>
+                            <p class="exp__co">Kifiya Financial Technology</p>
+                        </div>
+                    </div>
+                    <div class="exp reveal">
+                        <div class="exp__period">2022 — 2024</div>
+                        <div class="exp__info">
+                            <h3>AI Engineer → Software Engineer</h3>
+                            <p class="exp__co">Eskalate</p>
+                        </div>
+                    </div>
+                    <div class="exp reveal">
+                        <div class="exp__period">2023</div>
+                        <div class="exp__info">
+                            <h3>Web Developer</h3>
+                            <p class="exp__co">iCog Labs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ ABOUT ═══ -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-num">03</span>
+                    <h2 class="section-title">About</h2>
+                </div>
+                <div class="about-grid" style="display: block;">
+                    <div class="about__text reveal" style="max-width: 750px;">
+                        <p>I've always been the kind of person who just wants to figure out how things work. That simple curiosity drove me to score in the top 1% on the EUEE entrance exam, and eventually study Software Engineering (AI Specialization) at <strong>Addis Ababa University</strong>.</p>
+                        <p>Since then, I've had the incredible privilege of learning the ropes as a Google-backed <strong>A2SV Alumni</strong>, and I spent an unforgettable time diving into computational geometry and deep learning research at <strong>MIT SGI</strong>. These days, I'm doing my best to architect multi-agent AI systems that actually make a difference.</p>
+                        <p>I definitely don't have all the answers, and I break my code more often than I'd like to admit. But at my core, I'm just someone who genuinely enjoys taking incredibly complicated ideas, quietly wrestling with them, and building them into something simple and useful.</p>
+                    </div>
+                </div>
+
+                <div class="about__education reveal">
+                    <h3>Education</h3>
+                    <div class="edu">
+                        <div class="edu__school">Addis Ababa University</div>
+                        <div class="edu__detail">BSc Software Engineering (AI Stream) — Top 10th University in Africa</div>
+                    </div>
+                    <div class="edu">
+                        <div class="edu__school">10 Academy</div>
+                        <div class="edu__detail">ML/DS Certificate — 12 weeks project-based training</div>
+                    </div>
+                    <div class="edu">
+                        <div class="edu__school">A2SV (Google-backed ×2)</div>
+                        <div class="edu__detail">DSA & Software Development — Certified through technical interview</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SKILLS ═══ -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-num">04</span>
+                    <h2 class="section-title">Stack</h2>
+                </div>
+                <div class="stack-grid reveal">
+                    <div class="stack-col">
+                        <h4>AI / ML</h4>
+                        <ul>
+                            <li>Deep Learning</li><li>Computer Vision</li><li>Computer Graphics</li>
+                            <li>LLMs</li><li>NLP</li><li>Robotics</li>
+                        </ul>
+                    </div>
+                    <div class="stack-col">
+                        <h4>Languages</h4>
+                        <ul>
+                            <li>Python</li><li>JavaScript</li><li>TypeScript</li><li>Java</li>
+                        </ul>
+                    </div>
+                    <div class="stack-col">
+                        <h4>Frameworks</h4>
+                        <ul>
+                            <li>PyTorch</li><li>TensorFlow</li><li>React / Next.js</li>
+                            <li>FastAPI</li><li>Flutter</li><li>Node.js</li>
+                        </ul>
+                    </div>
+                    <div class="stack-col">
+                        <h4>Tools & Data</h4>
+                        <ul>
+                            <li>OpenCV</li><li>Pandas / NumPy</li><li>MongoDB</li>
+                            <li>MySQL</li><li>Docker</li><li>Git</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ CONTACT ═══ -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="contact-block reveal">
+                    <h2 class="contact__title">Let's build<br>something together.</h2>
+                    <p class="contact__sub">Whether it's AI, philosophy, or an iced latte recommendation — I'm all ears.</p>
+                    <div class="contact__links">
+                        <a href="mailto:tinsaetadesse769@gmail.com" class="contact__link">tinsaetadesse769@gmail.com</a>
+                        <a href="https://linkedin.com/in/tinsae-tadesse-anteneh" target="_blank" class="contact__link">LinkedIn ↗</a>
+                        <a href="https://github.com/TinsaeTadesse17" target="_blank" class="contact__link">GitHub ↗</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <span>built by ti, fueled by iced lattes · 2025</span>
+            <span>addis ababa, ethiopia 🇪🇹</span>
+        </footer>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- LORE PAGE — THE SECRET                  -->
+    <!-- ═══════════════════════════════════════ -->
+    <div id="lore" class="lore-overlay">
+        <div class="lore-card">
+            <button class="lore__x" id="lore-close">×</button>
+            <h2 class="lore__h">the lore ✨</h2>
+            <p class="lore__p lore__p--intro">you clicked my name. you're curious. i like that.</p>
+
+            <div class="lore__block">
+                <h3>☕ coffee order</h3>
+                <p>iced latte. always. no negotiations. ethiopian beans preferred — this is my hill and i will die on it.</p>
+            </div>
+
+            <div class="lore__block">
+                <h3>🐍 kobe bryant</h3>
+                <p>"everything negative — pressure, challenges — is all an opportunity for me to rise."<br>mamba mentality isn't a phase. kobe > lebron. there, i said it.</p>
+            </div>
+
+            <div class="lore__block">
+                <h3>🐉 jordan peterson</h3>
+                <p>"compare yourself to who you were yesterday, not to who someone else is today."<br>cleaned up my room. then cleaned up my code. it works.</p>
+            </div>
+
+            <div class="lore__block">
+                <h3>🌌 space nerd</h3>
+                <p>i've checked if the ISS is visible from addis ababa. (yes, it is.) the overview effect could fix most of humanity's problems. also, i can name 20+ constellations.</p>
+            </div>
+
+            <div class="lore__block">
+                <h3>♟️ chess</h3>
+                <p>sicilian defense main. life is too short for symmetrical openings. chess teaches more about decision-making than most management books.</p>
+            </div>
+
+            <div class="lore__block">
+                <h3>📚 on the shelf</h3>
+                <ul>
+                    <li>Ego is the Enemy — Holiday</li>
+                    <li>We Who Wrestle With God — Peterson</li>
+                    <li>Don't Sweat the Small Stuff... and It's All Small Stuff — Carlson</li>
+                    <li>The Laws of Human Nature — Greene</li>
+                </ul>
+            </div>
+
+            <div class="lore__block">
+                <h3>🔥 hot takes</h3>
+                <ul>
+                    <li>ethiopian coffee > everything. science, not opinion.</li>
+                    <li>best debugging tool: a walk + iced latte.</li>
+                    <li>stargazing should be a mandatory CS course.</li>
+                    <li>clean architecture is the chess of software eng.</li>
+                    <li>my first program was a calculator, thought i hacked the matrix.</li>
+                </ul>
+            </div>
+
+            <p class="lore__p lore__p--footer">thanks for being curious. that curiosity? it's probably what makes you great at what you do too. ✨</p>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
